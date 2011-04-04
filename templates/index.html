@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% load i18n %}
+
+{% block title %}{% trans 'Quej—metro' %}{% endblock %}
+
+{% block content %}
+
+
+{% if agenda %}
+<ul>
+    {% for people in agenda %}
+    <li><a href="/{{ people.slug }}/">{{ people.name }}</a> <small>()</small></li>
+    {% endfor %}
+    <a href="/new/">{% trans 'Add new' %}</a>
+</ul>
+{% endif %}
+
+{% endblock %}
