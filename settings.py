@@ -1,4 +1,4 @@
-# Django settings for quejometro project.
+﻿# Django settings for quejometro project.
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
@@ -106,6 +106,9 @@ TEMPLATE_DIRS = (
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
+    '/Users/willyaranda/projects/quejometro/templates',
+    '/Users/willyaranda/projects/quejometro/templates/quejas',
+    '/Users/willyaranda/projects/quejometro/templates/usuarios',
 )
 
 INSTALLED_APPS = (
@@ -145,6 +148,3 @@ LOGGING = {
         },
     }
 }
-
-#Email domain for checking the emails
-EMAIL_DOMAIN = "alumnos.nebrija.es"

@@ -3,32 +3,33 @@
 <html>
     <head>
     	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-	    <link rel="shortcut icon" href="/site_media/images/favicon.ico" >
+	<link rel="shortcut icon" href="/site_media/images/favicon.ico" >
 	<link rel="stylesheet" href="/site_media/css/main.css" type="text/css" />
-        <title>{% block title %}{% trans 'Quejómetro' %}{% endblock %}</title>
+        <title>{% block title %}{% trans 'Quej√≥metro' %}{% endblock %}</title>
     </head>
     <body>
 	<div class="header">
-            <h1>Agenda de contactos</h1>
+            <h1>Quej√≥metro</h1>
             {% block header %}
-            <!-- Header -->
+		<!-- Header -->
             {% endblock %}
         </div>
         <div class="main">
-            <h2>Menú</h2>
+            <h2>Barra horizontal...</h2>
             {% block menu %}
-            <!-- El menú -->
+		<!-- El men√∫ -->
             {% endblock %}
             <div class="content">
                 <h3>Contenido</h3>
                 {% block content %}
-                <!-- Aquí el contenido -->
+		    <!-- Aqu√≠ el contenido -->
                 {% endblock %}
             </div>
         </div>
         <div class="footer">
           <h2>Footer</h2>
           {% block footer %}
+	      <!-- Aqu√≠ el footer -->
           {% endblock %}
         </div>
     </body>

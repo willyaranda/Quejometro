@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% load i18n %}
+
+{% block title %}{% trans 'Quejómetro' %} &lt; {% trans 'Esta es la queja' %} {{ queja.id }}{% endblock %}
+
+{% block content %}
+
+
+{% if queja %}
+{{ queja.titulo }}
+{% trans 'Tiene ' %} {{ queja.votos }} {% trans ' votos' %}
+
+{% endif %}
+
+{% endblock %}

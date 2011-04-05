@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% load i18n %}
+
+{% block title %}{% trans 'Quej—metro. Nuevo usuario' %}{% endblock %}
+
+{% block content %}
+
+{% for error in form.non_field_errors %}
+    <p class="validation-error">{{ error }}</span>
+{% endfor %}
+
+<p id="formInfo">{% trans 'Los campos marcados con <span>*</span> son obligatorios' %}.</p>
+
+<form id="reg-form" method="post" action="" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.non_field_errors }}
+        {{ form.id }}
+
+            <div class="fieldWrapper">
+                        <label {% if form.name.field.required %}class="required"{% endif %} for="id_name">{{ form.name.label }}:</label>
+                        {{ form.name }}
+                        {{ form.name.errors }}
+                        <p class="fieldInfo">{{ form.name.help_text }}</p>
+            </div>
+            
+        <input type="submit" value="{% trans 'Crear' %}" />
+</form>
+
+{% endblock %}

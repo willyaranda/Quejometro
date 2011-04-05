@@ -2,17 +2,17 @@
 
 {% load i18n %}
 
-{% block title %}{% trans 'Quej�metro' %}{% endblock %}
+{% block title %}{% trans 'Quejómetro' %}{% endblock %}
 
 {% block content %}
 
 
-{% if agenda %}
+{% if quejas %}
 <ul>
-    {% for people in agenda %}
-    <li><a href="/{{ people.slug }}/">{{ people.name }}</a> <small>()</small></li>
+    {% for queja in quejas %}
+    <li><a href="/{{ queja.id }}/{{ queja.slug }}/">{{ queja.titulo }}</a></li>
     {% endfor %}
-    <a href="/new/">{% trans 'Add new' %}</a>
+    <a href="/nueva/">{% trans 'Añadir nueva queja' %}</a>
 </ul>
 {% endif %}
 
