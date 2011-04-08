@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block title %}{% trans 'Claim #' %}{{ claim.id }} &gt; {% endblock %}
+
+    {% block content %}
+        
+        {% if messages %}
+        <ul class="messages">
+            {% for message in messages %}
+            <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+        
+        {% if claim %}
+        {{ claim.title }}
+        {% trans 'Has ' %} {{ claim.votes }} {% trans ' votes' %}
+        <a href="/{{ claim.id }}/{{ claim.slug }}/edit"> {% trans 'Edit' %}</a>
+        
+        {% endif %}
+
+{% endblock %}

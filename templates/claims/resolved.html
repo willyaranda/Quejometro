@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block title %}Resolved claims &gt; {% endblock %}
+
+{% block content %}
+{% if claims %}
+<ul>
+    {% for claim in claims %}
+    <li><a href="/{{ claim.id }}/{{ claim.slug }}/">{{ claim.title }}</a> <small>Votes: {{ claim.votes }}</small></li>
+    {% endfor %}
+</ul>
+{% endif %}
+
+{% if not claims %}
+There are no resolved claims!
+{% endif %}
+{% endblock %}

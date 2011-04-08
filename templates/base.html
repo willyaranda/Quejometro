@@ -5,32 +5,34 @@
     	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 	<link rel="shortcut icon" href="/site_media/images/favicon.ico" >
 	<link rel="stylesheet" href="/site_media/css/main.css" type="text/css" />
-        <title>{% block title %}{% trans 'Quejómetro' %}{% endblock %}</title>
+        <title>{% block title %}{% endblock %}{% trans 'Quejómetro' %}</title>
     </head>
     <body>
-	<div class="header">
-            <h1>Quejómetro</h1>
-            {% block header %}
-		<!-- Header -->
-            {% endblock %}
-        </div>
-        <div class="main">
+	<header class="header">
+            <a class="logo" href="/">{% trans 'Quejómetro' %}</a></h1>
+	    {% if user.is_authenticated %}
+	    <p class="profile">Anonymous? <a href="/users/register">¡Register!</a> or <a href="/users/login/">Log in</a></p>
+	    {% else %}
+	    <p class="profile">Hi! {{ user.username }}. <a href="/users/profile">Profile</a> | <a href="/users/logout">Logout?</a></p>
+	    {% endif %}
+        </header>
+        <nav>
             <h2>Barra horizontal...</h2>
             {% block menu %}
 		<!-- El menú -->
             {% endblock %}
-            <div class="content">
+	</nav>
+        <article class="content">
                 <h3>Contenido</h3>
                 {% block content %}
 		    <!-- Aquí el contenido -->
                 {% endblock %}
-            </div>
-        </div>
-        <div class="footer">
+        </article>
+        <footer>
           <h2>Footer</h2>
           {% block footer %}
 	      <!-- Aquí el footer -->
           {% endblock %}
-        </div>
+        </footer>
     </body>
 </html>

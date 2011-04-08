@@ -2,18 +2,19 @@
 
 {% load i18n %}
 
-{% block title %}{% trans 'Quejómetro' %}{% endblock %}
+{% block title %}{% endblock %}
 
 {% block content %}
 
 
-{% if quejas %}
+{% if claims %}
 <ul>
-    {% for queja in quejas %}
-    <li><a href="/{{ queja.id }}/{{ queja.slug }}/">{{ queja.titulo }}</a></li>
+    {% for claim in claims %}
+    <li><a href="/{{ claim.id }}/{{ claim.slug }}/">{{ claim.title }}</a> <small>{% trans 'Votes:' %} {{ claim.votes }}</small></li>
     {% endfor %}
-    <a href="/nueva/">{% trans 'Añadir nueva queja' %}</a>
 </ul>
 {% endif %}
+
+<a href="/new/">{% trans 'Add new claim' %}</a>
 
 {% endblock %}
