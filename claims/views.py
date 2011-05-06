@@ -45,7 +45,7 @@ def new(request):
     form = ClaimForm()
     return render_to_response('new.html', {'form': form}, context_instance=RequestContext(request))
 
-
+#@user_passes_test(lambda u: u.has_perm('polls.can_vote'))
 def edit(request, id, slug):
     c = get_object_or_404(Claim, id=id)
     if request.method == 'POST':
