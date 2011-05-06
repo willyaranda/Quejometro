@@ -19,7 +19,7 @@ class UserProfile(models.Model):
         return u'%s' % (self.nick)
         
     def checkEmail(email):
-        #FIXME: chage alumnos.nebrija.es to the EMAIL_DOMAIN constrain
+        #FIXME: change alumnos.nebrija.es to the EMAIL_DOMAIN constrain
         if re.match('[a-zA-Z0-9+_\-\.]+@alumnos.nebrija.es', b):
             return true
         return false
