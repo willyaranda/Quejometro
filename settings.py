@@ -1,4 +1,8 @@
-﻿# Django settings for quejometro project.
+﻿# Basic configuration
+SITE_URL = "http://claim.univ.edu"
+SITE_TITLE = "Claims - Univ.edu"
+
+# Django settings for quejometro project.
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
@@ -43,14 +47,16 @@ USE_I18N = True
 # calendars according to the current locale
 USE_L10N = True
 
+import os
+PROJECT_PATH = os.path.realpath(os.path.dirname(__file__))
 # Absolute filesystem path to the directory that will hold user-uploaded files.
 # Example: "/home/media/media.lawrence.com/media/"
-MEDIA_ROOT = ''
+MEDIA_ROOT = PROJECT_PATH+'/public/media'
 
 # URL that handles the media served from MEDIA_ROOT. Make sure to use a
 # trailing slash.
 # Examples: "http://media.lawrence.com/media/", "http://example.com/media/"
-MEDIA_URL = ''
+MEDIA_URL = SITE_URL+'/media/'
 
 # Absolute path to the directory static files should be collected to.
 # Don't put anything in this directory yourself; store your static files
@@ -102,8 +108,6 @@ MIDDLEWARE_CLASSES = (
 
 ROOT_URLCONF = 'Quejometro.urls'
 
-import os
-PROJECT_PATH = os.path.realpath(os.path.dirname(__file__))
 TEMPLATE_DIRS = (
     PROJECT_PATH+'/templates',
     PROJECT_PATH+'/templates/claims',
@@ -147,3 +151,18 @@ LOGGING = {
         },
     }
 }
+
+#Map authentication Class
+AUTH_PROFILE_MODULE = "users.UserProfile"
+
+TEMPLATE_CONTEXT_PROCESSORS = (
+    'django.contrib.messages.context_processors.messages',
+    'django.contrib.auth.context_processors.auth',
+)
+
+LOGIN_URL = '/users/login/'
+# add template context preprocessors
+TEMPLATE_CONTEXT_PREPROCESSORS = (
+    "django.core.context_processors.auth",
+    "django.core.context_processors.request",
+)

@@ -16,3 +16,6 @@ urlpatterns += patterns('claims.views',
     (r'^(?P<id>\d+)/(?P<slug>[-\w]+)/edit/$', 'edit'),
     (r'^resolved/$', 'resolved'),
 )
+
+#urlpatterns += patterns('users.views',
+#    (r'')
