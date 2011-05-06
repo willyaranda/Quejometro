@@ -25,7 +25,7 @@ class Claim(models.Model):
     slug = models.SlugField(_("Slug"), max_length=50, unique=True)
     description = models.TextField(_("Description"))
     category = models.CharField(_("Category"), max_length=100, choices=CATEGORY_LIST)
-    creator = models.ForeignKey('users.UserProfile')
+    creator = models.ForeignKey('accounts.UserProfile')
     
     #Optional (or blank at creation time)
     votes = models.IntegerField(_("Votes"), default=0, blank=True)

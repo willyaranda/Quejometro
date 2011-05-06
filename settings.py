@@ -111,7 +111,7 @@ ROOT_URLCONF = 'Quejometro.urls'
 TEMPLATE_DIRS = (
     PROJECT_PATH+'/templates',
     PROJECT_PATH+'/templates/claims',
-    PROJECT_PATH+'/templates/users',
+    PROJECT_PATH+'/templates/accounts',
 )
 
 INSTALLED_APPS = (
@@ -126,7 +126,7 @@ INSTALLED_APPS = (
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
     'claims',
-    'users',
+    'accounts',
 )
 
 # A sample logging configuration. The only tangible logging
@@ -153,14 +153,15 @@ LOGGING = {
 }
 
 #Map authentication Class
-AUTH_PROFILE_MODULE = "users.UserProfile"
+AUTH_PROFILE_MODULE = "accounts.UserProfile"
+
+#LOGIN_REDIRECT_URL = ""
 
 TEMPLATE_CONTEXT_PROCESSORS = (
     'django.contrib.messages.context_processors.messages',
     'django.contrib.auth.context_processors.auth',
 )
 
-LOGIN_URL = '/users/login/'
 # add template context preprocessors
 TEMPLATE_CONTEXT_PREPROCESSORS = (
     "django.core.context_processors.auth",

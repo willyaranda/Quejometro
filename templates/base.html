@@ -10,10 +10,10 @@
     <body>
 	<header class="header">
             <a class="logo" href="/">{% trans 'Quejómetro' %}</a></h1>
-	    {% if user.is_authenticated %}
-	    <p class="profile">Anonymous? <a href="/users/register">¡Register!</a> or <a href="/users/login/">Log in</a></p>
+	    {% if not user.is_authenticated %}
+	    <p class="profile">Anonymous? <a href="/accounts/register/">¡Register!</a> or <a href="/accounts/login/">Log in</a></p>
 	    {% else %}
-	    <p class="profile">Hi! {{ user.username }}. <a href="/users/profile">Profile</a> | <a href="/users/logout">Logout?</a></p>
+	    <p class="profile">Hi! {{ user.username }}. <a href="/accounts/profile">Profile</a> | <a href="/accounts/logout/">Logout?</a></p>
 	    {% endif %}
         </header>
         <nav>

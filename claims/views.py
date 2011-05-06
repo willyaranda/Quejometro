@@ -8,10 +8,11 @@ from django.core.urlresolvers import reverse
 from django.contrib import messages
 from django.template import Context
 from django.utils.translation import ugettext_lazy as _
+from django.contrib.auth.decorators import login_required
 
 #Our classes, models, forms...
 from claims.models import Claim
-from users.models import UserProfile
+from accounts.models import UserProfile
 from claims.forms import ClaimForm
 
 
@@ -31,7 +32,7 @@ def detail(request, id, slug):
     }
     return render_to_response('detail.html', data, context_instance=RequestContext(request))
 
-
+@login_required
 def new(request):
     if request.method == 'POST':
         claim = ClaimForm(request.POST)
