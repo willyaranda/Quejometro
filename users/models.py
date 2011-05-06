@@ -16,7 +16,7 @@ class UserProfile(models.Model):
     votes = models.ManyToManyField('claims.Claim', null=True, blank=True)
 
     def __unicode__(self):
-        return u'%s' % (self.nick)
+        return u'%s' % (self.user)
         
     def checkEmail(email):
         #FIXME: change alumnos.nebrija.es to the EMAIL_DOMAIN constrain

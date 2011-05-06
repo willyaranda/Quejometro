@@ -11,9 +11,8 @@ urlpatterns = patterns('',
 )
 
 urlpatterns += patterns('claims.views',
-    #(r'^usuario/(?P<slug>[-\w]+)$', 'usuario.views.nuevo'),
-    #(r'^nuevo/$', 'quejas.views.nuevo'),
-    #Le pasamos a quejas/view.py funcion detalle el parametro request y slug
     (r'^(?P<id>\d+)/(?P<slug>[-\w]+)/$', 'detail'),
     (r'^new/$', 'new'),
+    (r'^(?P<id>\d+)/(?P<slug>[-\w]+)/edit/$', 'edit'),
+    (r'^resolved/$', 'resolved'),
 )
