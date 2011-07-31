@@ -12,7 +12,6 @@ from django.contrib.auth.decorators import login_required
 
 #Our classes, models, forms...
 from claims.models import Claim
-from accounts.models import UserProfile
 from claims.forms import ClaimForm
 
 
