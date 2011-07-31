@@ -115,6 +115,7 @@ ROOT_URLCONF = 'Quejometro.urls'
 TEMPLATE_DIRS = (
     PROJECT_PATH+'/templates',
     PROJECT_PATH+'/templates/claims',
+    PROJECT_PATH+'/templates/accounts',
 )
 
 INSTALLED_APPS = (
